@@ -1,9 +1,11 @@
 public class Hangman {
     public static void main(String[] args) {
         
+        Game gallows = new Game();
+        while (gallows.getWrongs() < 5) {
+            draw(gallows.getWrongs());
+        }
         
-
-
 
 
 
