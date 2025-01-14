@@ -2,8 +2,10 @@ import java.util.Scanner;
 
 public class Game {
     private int wrongs = 0;
+    private static final String valids[] = {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
     public static int rounds = 0;
     public static int dudeshanged = 0;
+    public String lastcorrectletter = "";
     private int turnspassed = 0;
     private String codewoord = "";
     private static String wordlist[] = {"she is perfect", "the muffin man", "the fighter donkey hops up", "ohh shrek", "with a dragon that breathes fire", "it is on my to do list",
@@ -23,27 +25,43 @@ public class Game {
         return this.turnspassed;
     }
 
-     public static boolean promptGuessing() //prompts a guess and returns true or false depending
+    private boolean containsLettuce(String guess) {
+        int correctcheckcounter = 0;
+        for (int i = 0;i < codewoord.length();i++) {
+            if (guess.equals(codewoord.substring(i,i+1))) {
+                correctcheckcounter++;
+            }
+        }
+        if (correctcheckcounter > 0) {
+            this.lastcorrectletter = guess;
+            return true;
+        }
+        return false;
+
+    }
+
+     public boolean promptGuessing() //prompts a guess and returns true or false depending
     {
         Scanner sc = new Scanner(System.in);
         boolean validAnswer = false;
         String userAnswer = "";
+        int validthingcounter = 0;
         for (;!validAnswer;)
         {
             System.out.println("=====================================================");
-            System.out.print("GUESS the letter: ");
+            System.out.print("GUESS a letter: ");
             userAnswer = sc.nextLine();
-            if ((userAnswer.equals("yes")) || (userAnswer.equals("no"))) {//checking if dude typed right letter
+            while (validthingcounter == 0) {
+                for (int i = 0; i < 26;i++) {
+                    if ((userAnswer.equals(valids[i]))) {//checking if dude typed right letter
+                        validthingcounter++;
+                    } 
+                }
+            }
+            if (validthingcounter > 0) {
                 validAnswer = true;
-            } else {
-                System.out.println("Plz type exactly either \"yes\" or \"no\". ");
             }
         }
-        if (userAnswer.equals("yes")) {
-            
-            return true;
-        }
-        
-        return false;
+        return this.containsLettuce(userAnswer);
     }
 }
