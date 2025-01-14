@@ -11,6 +11,8 @@ public class Game {
     private static String wordlist[] = {"she is perfect", "the muffin man", "the fighter donkey hops up", "ohh shrek", "with a dragon that breathes fire", "it is on my to do list",
 "but how will you kiss me","I am not blocking","not exactly what i expected","donkey i am ok","He does not look so good","to move firewood","Shrek heaves a deep sigh","a guard puts fiona on the back of his horse"
 ,"if we need you i will whistle","shrek fights them","some of you may die but that is a sacrifice i am willing to make"};
+    public boolean gamefinished = false;
+    public String gamestatus = "playing";
 
     public Game() {
         Game.rounds++;
@@ -24,6 +26,7 @@ public class Game {
     public int getTurnsPassed() {
         return this.turnspassed;
     }
+    
 
     private boolean containsLettuce(String guess) {
         int correctcheckcounter = 0;
@@ -35,6 +38,8 @@ public class Game {
         if (correctcheckcounter > 0) {
             this.lastcorrectletter = guess;
             return true;
+        } else {
+            this.wrongs++;
         }
         return false;
 
@@ -62,6 +67,7 @@ public class Game {
                 validAnswer = true;
             }
         }
+
         return this.containsLettuce(userAnswer);
     }
 }
