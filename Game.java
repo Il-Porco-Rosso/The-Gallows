@@ -5,7 +5,7 @@ public class Game {
     private static final String valids[] = {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
     public static int rounds = 0;
     public static int dudeshanged = 0;
-    public String lastcorrectletter = "";
+    public String allcorrectletters = "";
     private int turnspassed = 0;
     private String codewoord = "";
     private static String wordlist[] = {"she is perfect", "the muffin man", "the fighter donkey hops up", "ohh shrek", "with a dragon that breathes fire", "it is on my to do list",
@@ -27,21 +27,52 @@ public class Game {
         return this.turnspassed;
     }
     
+    public void give_() {
+        for (int c = 0;c < 26;c++) {
+            for (int i = 0;i < this.codewoord.length();i++) {
+                if (codewoord.substring(i,i+1).equals(valids[c])) {
+                    if (containsRawLettuce(valids[c])) {
+                        System.out.print(valids[c].toUpperCase()+" ");
+                    } else {
+                        System.out.print("_ ");
+                    }
+                } else {
+                    System.out.print("  ");
+                }
+            }
+        }
+    }
 
     private boolean containsLettuce(String guess) {
         int correctcheckcounter = 0;
         for (int i = 0;i < codewoord.length();i++) {
-            if (guess.equals(codewoord.substring(i,i+1))) {
+            if (guess.toLowerCase().equals(codewoord.substring(i,i+1))) {
                 correctcheckcounter++;
             }
         }
         if (correctcheckcounter > 0) {
-            this.lastcorrectletter = guess;
+            this.allcorrectletters += guess;
             return true;
         } else {
             this.wrongs++;
         }
         return false;
+        }
+
+        private boolean containsRawLettuce(String guess) {
+            int correctcheckcounter = 0;
+            for (int i = 0;i < codewoord.length();i++) {
+                if (guess.toLowerCase().equals(codewoord.substring(i,i+1))) {
+                    correctcheckcounter++;
+                }
+            }
+            if (correctcheckcounter > 0) {
+                
+                return true;
+            } else {
+                
+            }
+            return false;
 
     }
 

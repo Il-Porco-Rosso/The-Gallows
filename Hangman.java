@@ -2,8 +2,10 @@ public class Hangman {
     public static void main(String[] args) {
         
         Game gallows = new Game();
-        while (gallows.getWrongs() < 5) {
+        while (!gallows.gamefinished) {
             draw(gallows.getWrongs());
+            writeLineThing(gallows.allcorrectletters);
+            gallows.promptGuessing();
         }
         
 
@@ -12,6 +14,9 @@ public class Hangman {
     }
 //------------------------------------------------------------
 //-------------------------------------------------------------
+    public static void writeLineThing(String correctLetters) {
+        
+    }
 
     public static void draw(int mess) {
             System.out.println("--------------------------------------------");    
