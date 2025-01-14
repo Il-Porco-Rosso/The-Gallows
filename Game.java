@@ -7,7 +7,7 @@ public class Game {
     public static int dudeshanged = 0;
     public String allcorrectletters = "";
     private int turnspassed = 0;
-    private String codewoord = "";
+    public String codewoord = "";
     private static String wordlist[] = {"she is perfect", "the muffin man", "the fighter donkey hops up", "ohh shrek", "with a dragon that breathes fire", "it is on my to do list",
 "but how will you kiss me","I am not blocking","not exactly what i expected","donkey i am ok","He does not look so good","to move firewood","Shrek heaves a deep sigh","a guard puts fiona on the back of his horse"
 ,"if we need you i will whistle","shrek fights them","some of you may die but that is a sacrifice i am willing to make"};
@@ -23,16 +23,20 @@ public class Game {
         return this.wrongs;
     }
 
+    public static String getValids(int csharp) {
+        return valids[csharp];
+    }
+
     public int getTurnsPassed() {
         return this.turnspassed;
     }
     
-    public void give_() {
+    public void printTheLines() {
         for (int c = 0;c < 26;c++) {
             for (int i = 0;i < this.codewoord.length();i++) {
                 if (codewoord.substring(i,i+1).equals(valids[c])) {
-                    if (containsRawLettuce(valids[c])) {
-                        System.out.print(valids[c].toUpperCase()+" ");
+                    if (containsRawLettuce(valids[c])) { //TODO: CHANGE VALIDS TO ALL CORRECT LETTERS AND FIX VALIDS and stUFF
+                        System.out.print(allcorrectletters.toUpperCase()+" ");
                     } else {
                         System.out.print("_ ");
                     }
@@ -59,14 +63,14 @@ public class Game {
         return false;
         }
 
-        private boolean containsRawLettuce(String guess) {
-            int correctcheckcounter = 0;
+        public boolean containsRawLettuce(String guess) {
+            int corrr = 0;
             for (int i = 0;i < codewoord.length();i++) {
                 if (guess.toLowerCase().equals(codewoord.substring(i,i+1))) {
-                    correctcheckcounter++;
+                    corrr++;
                 }
             }
-            if (correctcheckcounter > 0) {
+            if (corrr > 0) {
                 
                 return true;
             } else {

@@ -4,7 +4,7 @@ public class Hangman {
         Game gallows = new Game();
         while (!gallows.gamefinished) {
             draw(gallows.getWrongs());
-            writeLineThing(gallows.allcorrectletters);
+          
             gallows.promptGuessing();
         }
         
@@ -14,8 +14,8 @@ public class Hangman {
     }
 //------------------------------------------------------------
 //-------------------------------------------------------------
-    public static void writeLineThing(String correctLetters) {
-        
+    public static void drawEmptyletters() {
+      
     }
 
     public static void draw(int mess) {
