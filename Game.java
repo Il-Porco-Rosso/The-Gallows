@@ -9,7 +9,7 @@ public class Game {
     private int turnspassed = 0;
     public String codewoord = "";
     private static String wordlist[] = {"she is perfect", "the muffin man", "the fighter donkey hops up", "ohh shrek", "with a dragon that breathes fire", "it is on my to do list",
-"but how will you kiss me","I am not blocking","not exactly what i expected","donkey i am ok","He does not look so good","to move firewood","Shrek heaves a deep sigh","a guard puts fiona on the back of his horse"
+"but how will you kiss me","I am not blocking","not exactly what i expected","donkey i am ok","He does not look so good","to move firewood","shrek heaves a deep sigh","a guard puts fiona on the back of his horse"
 ,"if we need you i will whistle","shrek fights them","some of you may die but that is a sacrifice i am willing to make"};
     public boolean gamefinished = false;
     public String gamestatus = "playing";
@@ -19,6 +19,12 @@ public class Game {
         this.codewoord = wordlist[(int)(Math.random() * wordlist.length)];
     }
 
+    public String getSecrat() {
+        if (this.gamefinished) {
+            return codewoord;
+        } 
+        return null;
+    }
     public int getWrongs() {
         return this.wrongs;
     }
@@ -32,20 +38,27 @@ public class Game {
     }
     
     public void printTheLines() {
-        for (int c = 0;c < 26;c++) {
+        int amountofunderscores = 0;
             for (int i = 0;i < this.codewoord.length();i++) {
-                if (codewoord.substring(i,i+1).equals(valids[c])) {
-                    if (containsRawLettuce(valids[c])) { //TODO: CHANGE VALIDS TO ALL CORRECT LETTERS AND FIX VALIDS and stUFF
-                        System.out.print(allcorrectletters.toUpperCase()+" ");
+                if (isAValidLetter(codewoord.substring(i,i+1))) {
+                    if (containsRawLettuce(codewoord.substring(i,i+1), allcorrectletters)) { 
+                        System.out.print(codewoord.substring(i,i+1).toUpperCase()+" ");
                     } else {
                         System.out.print("_ ");
+                        amountofunderscores++;
                     }
                 } else {
                     System.out.print("  ");
+                    
                 }
             }
+        if (amountofunderscores == 0) {
+            gamestatus = "won";
+            gamefinished = true;
         }
+        
     }
+    
 
     private boolean containsLettuce(String guess) {
         int correctcheckcounter = 0;
@@ -63,10 +76,10 @@ public class Game {
         return false;
         }
 
-        public boolean containsRawLettuce(String guess) {
+        public boolean containsRawLettuce(String that, String islocatedin) {
             int corrr = 0;
-            for (int i = 0;i < codewoord.length();i++) {
-                if (guess.toLowerCase().equals(codewoord.substring(i,i+1))) {
+            for (int i = 0;i < islocatedin.length();i++) {
+                if (that.toLowerCase().equals(islocatedin.substring(i,i+1))) {
                     corrr++;
                 }
             }
@@ -78,6 +91,18 @@ public class Game {
             }
             return false;
 
+        
+
+        }
+
+    
+    public boolean isAValidLetter(String letter) {
+        for (int c = 0;c < 26;c++) {
+            if (letter.equals(valids[c])) {
+                return true;
+            }
+        }
+        return false;
     }
 
      public boolean promptGuessing() //prompts a guess and returns true or false depending
@@ -88,18 +113,20 @@ public class Game {
         int validthingcounter = 0;
         for (;!validAnswer;)
         {
-            System.out.println("=====================================================");
-            System.out.print("GUESS a letter: ");
-            userAnswer = sc.nextLine();
-            while (validthingcounter == 0) {
-                for (int i = 0; i < 26;i++) {
-                    if ((userAnswer.equals(valids[i]))) {//checking if dude typed right letter
-                        validthingcounter++;
-                    } 
+            if (!gamefinished) {
+                System.out.println("\n=====================================================");
+                System.out.print("GUESS a letter: ");
+                userAnswer = sc.nextLine();
+                while (validthingcounter == 0) {
+                    for (int i = 0; i < 26;i++) {
+                        if ((userAnswer.equals(valids[i]))) {//checking if dude typed right letter
+                            validthingcounter++;
+                        } 
+                    }
                 }
-            }
-            if (validthingcounter > 0) {
-                validAnswer = true;
+                if (validthingcounter > 0) {
+                    validAnswer = true;
+                }
             }
         }
 

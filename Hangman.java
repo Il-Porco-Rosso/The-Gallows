@@ -4,8 +4,23 @@ public class Hangman {
         Game gallows = new Game();
         while (!gallows.gamefinished) {
             draw(gallows.getWrongs());
-          
+            gallows.printTheLines();
             gallows.promptGuessing();
+            if (gallows.getWrongs() > 4) {
+                gallows.gamefinished = true;
+                gallows.gamestatus = "lose";
+            }
+        }
+        if (gallows.gamestatus == "won") {
+            System.out.println("============================================");
+            System.out.print("You win!!!! The word/phrase was: ");
+            System.out.println(gallows.getSecrat());
+            System.out.println("============================================");
+        } else {
+          System.out.println("============================================");
+            System.out.print("Oh no he died!!!! The word/phrase was: ");
+            System.out.println(gallows.getSecrat());
+            loser();
         }
         
 
@@ -95,7 +110,7 @@ public class Hangman {
     //    System.out.println("--------------------------------------------");//
     */
     }
-    public void loser(){
+    public static void loser(){
         System.out.println("U DUMB!");
     }
 }
