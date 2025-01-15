@@ -113,7 +113,7 @@ public class Game {
         int validthingcounter = 0;
         for (;!validAnswer;)
         {
-            if (!gamefinished) {
+           
                 System.out.println("\n=====================================================");
                 System.out.print("GUESS a letter: ");
                 userAnswer = sc.nextLine();
@@ -127,7 +127,7 @@ public class Game {
                 if (validthingcounter > 0) {
                     validAnswer = true;
                 }
-            }
+            
         }
 
         return this.containsLettuce(userAnswer);
