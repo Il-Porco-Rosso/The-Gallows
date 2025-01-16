@@ -5,12 +5,15 @@ public class Hangman {
         while (!gallows.gamefinished) {
             draw(gallows.getWrongs());
             gallows.printTheLines();
-            gallows.promptGuessing();
-            if (gallows.getWrongs() > 4) {
-                gallows.gamefinished = true;
-                gallows.gamestatus = "lose";
+            if (!gallows.gamefinished) {
+                gallows.promptGuessing();
+                if (gallows.getWrongs() > 4) {
+                    gallows.gamefinished = true;
+                    gallows.gamestatus = "lose";
+                }
             }
         }
+        draw(gallows.getWrongs());
         if (gallows.gamestatus == "won") {
             System.out.println("============================================");
             System.out.print("You win!!!! The word/phrase was: ");

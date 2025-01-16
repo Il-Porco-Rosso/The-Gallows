@@ -9,8 +9,9 @@ public class Game {
     private int turnspassed = 0;
     public String codewoord = "";
     private static String wordlist[] = {"she is perfect", "the muffin man", "the fighter donkey hops up", "ohh shrek", "with a dragon that breathes fire", "it is on my to do list",
-"but how will you kiss me","I am not blocking","not exactly what i expected","donkey i am ok","He does not look so good","to move firewood","shrek heaves a deep sigh","a guard puts fiona on the back of his horse"
-,"if we need you i will whistle","shrek fights them","some of you may die but that is a sacrifice i am willing to make"};
+"but how will you kiss me","i am not blocking","not exactly what i expected","donkey i am ok","he does not look so good","to move firewood","shrek heaves a deep sigh","a guard puts fiona on the back of his horse"
+,"if we need you i will whistle","shrek fights them","some of you may die but that is a sacrifice i am willing to make","extinguishes","twenty pieces","he is getting away","you there ogre","what are you doing in my swamp"
+,"listen little donkey","i like my privacy","i put up signs","all right get out of here","eat me","no no not the buttons","my lord we found it","keep off the grass shine your shoes wipe your face"};
     public boolean gamefinished = false;
     public String gamestatus = "playing";
 
