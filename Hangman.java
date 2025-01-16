@@ -16,7 +16,11 @@ public class Hangman {
         draw(gallows.getWrongs());
         if (gallows.gamestatus == "won") {
             System.out.println("============================================");
-            System.out.print("You win!!!! The word/phrase was: ");
+            if (gallows.getWrongs() == 0) {
+                System.out.println("Woah FLAWLESS!!!!!! The word/phrase was: ");
+            } else {  
+                System.out.print("You win!!!! The word/phrase was: ");
+            }
             System.out.println(gallows.getSecrat());
             System.out.println("============================================");
         } else {
