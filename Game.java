@@ -20,10 +20,10 @@ public class Game {
 "we are taking them to coruscant","the ambassadors are jedi knights i beleive","no need to report that to him","i love democracy","negotiations were short",
 /*NEXT THINGS ARENT RELATED TO STAR WARS */"we are the knights of the round table","how do you know she is a witch","are you suggesting coconuts can migrate","she turned me into a newt","tis but a scratch",
 "what are you gonna do bleed on me","we are the knights who say ni","it is the old man from scene twenty four","there are some who call me tim","one rabbit stew coming right up","he aint got shit all over him"
-,"what is the airspeed velocity of an unladen swallow","holy hand grenade","pie jesu domine dona eis requiem","no singing",
-/*NEXT THINGS ARENT RELATED TO MONTY PYTHON AN THE HOLY GRAIL */"welcome to the j","jungle one do you copy","they should give me a raise as a private","no do not waste it","fm comms work","i am glad the chicken has died for our cause"
-,"everyone outta die someday red","number twenty three","you will be stone dead in a few minutes","do me a favour","i do not want to go on the cart","i am thirty-seven i am not old","i thought we were an autonomous colective",
+,"what is the airspeed velocity of an unladen swallow","holy hand grenade","pie jesu domine dona eis requiem","no singing","you will be stone dead in a few minutes","do me a favour","i do not want to go on the cart","i am thirty-seven i am not old","i thought we were an autonomous collective",
 "we eat ham and jam and spam a lot","shut up","you got bad breath","you are in great peril","scilence foul temptress","i bet you are gay","shut your noise and get that suit on","did you kill all those guards","camelot is very good pig country",
+/*NEXT THINGS ARENT RELATED TO MONTY PYTHON AN THE HOLY GRAIL */"welcome to the j","jungle one do you copy","they should give me a raise as a private","no do not waste it","fm comms work","i am glad the chicken has died for our cause"
+,"everyone outta die someday red","number twenty three",
 /*NEXT THINGS ARENT RELATED TO BUSINESS INSIDER JUNGLE SCHOOL VIDEO */"i hurt people","hey look buddy i am an engineer","be polite","be efficient","have a plan to kill everyone you meet","i am heavy weapons guy",
 "who touched my gun","no that would be your mother","he punched out all my blood","piss","what makes me a good demoman","i do not think it is anything to worry about","doctor assisted homicide","cry some more",
 "im a force o nature","that soldier is a bloody spy","spy around here","last one alive lock the door","do you believe in magic","nice hustle tons of fun"};
