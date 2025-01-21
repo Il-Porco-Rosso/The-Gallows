@@ -76,7 +76,7 @@ public class Game {
     }
     
 
-    private boolean containsLettuce(String guess) {
+    private boolean containsLettuce(String guess) { // checks if guess is correct
         int correctcheckcounter = 0;
         for (int i = 0;i < codewoord.length();i++) {
             if (guess.toLowerCase().equals(codewoord.substring(i,i+1))) {
@@ -121,7 +121,7 @@ public class Game {
         return false;
     }
 
-     public boolean promptGuessing() //prompts a guess and returns true or false depending
+     public void promptGuessing() //prompts a guess and returns true or false depending
     {
         Scanner sc = new Scanner(System.in);
         boolean validAnswer = false;
@@ -129,7 +129,6 @@ public class Game {
         int validthingcounter = 0;
         for (;!validAnswer;)
         {
-           
                 System.out.println("\n=====================================================");
                 System.out.print("GUESS a letter: ");
                 userAnswer = sc.nextLine();
@@ -139,13 +138,14 @@ public class Game {
                             validthingcounter++;
                         } 
                     }
+                    break;
                 }
                 if (validthingcounter > 0) {
                     validAnswer = true;
-                }
+                } 
             
         }
 
-        return this.containsLettuce(userAnswer);
+        this.containsLettuce(userAnswer);
     }
 }
