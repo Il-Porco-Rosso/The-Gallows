@@ -15,7 +15,7 @@ public class Game {
 /*NEXT THINGS ARENT RELATED TO SHREK */,"we are assassins our target is our teacher","sir do we have to call you sir","thing is i dont have the kind of name you just give to people","hi i am from the ministry of defence",
 "do the deed and you get ten billion","i am a gifted improviser","tenticles","seventy percent of the moon gone","a three hundred fifty kilometer per hour fastball","his top speed is mach twenty",
 "which one of you rejcts wants this thing","you were comedic relief dude that is big","just a ten caliber nothing special","he even knows the lines","death is an occupational hazard","an anti me bb",
-"rumor christened him the reaper","this is my afternoon snack","tadaomi karasuma","that was one of our m sixties","second blade","like a python","do not hate assassination",
+"rumor christened him the reaper","this is my afternoon snack","tadaomi karasuma","that was one of our m sixties","second blade","like a python","do not hate assassination","time to laze the day away",
 /*NEXT THINGS ARENT RELATED TO ASSASSINATION CLASSROOM */"but my lord is it legal","i will make it legal","he will not be trained","misa called jar jar binks","roger roger","does not compute uhh you are under arrest",
 "we are taking them to coruscant","the ambassadors are jedi knights i beleive","no need to report that to him","i love democracy","negotiations were short",
 /*NEXT THINGS ARENT RELATED TO STAR WARS */"we are the knights of the round table","how do you know she is a witch","are you suggesting coconuts can migrate","she turned me into a newt","tis but a scratch",
@@ -32,7 +32,8 @@ public class Game {
 
     public Game() {
         Game.rounds++;
-        this.codewoord = wordlist[(int)(Math.random() * wordlist.length)];
+        this.codewoord = wordlist[(int)(Math.random() * (wordlist.length + 1 ))];
+        //System.out.println(this.codewoord);
     }
 
     public String getSecrat() {
