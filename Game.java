@@ -26,7 +26,11 @@ public class Game {
 ,"everyone outta die someday red","number twenty three","it is very bland","could use some seasoning",
 /*NEXT THINGS ARENT RELATED TO BUSINESS INSIDER JUNGLE SCHOOL VIDEO */"i hurt people","hey look buddy i am an engineer","be polite","be efficient","have a plan to kill everyone you meet","i am heavy weapons guy",
 "who touched my gun","no that would be your mother","he punched out all my blood","piss","what makes me a good demoman","i do not think it is anything to worry about","doctor assisted homicide","cry some more",
-"im a force o nature","that soldier is a bloody spy","spy around here","last one alive lock the door","do you believe in magic","nice hustle tons of fun"};
+"im a force o nature","that soldier is a bloody spy","spy around here","last one alive lock the door","do you believe in magic","nice hustle tons of fun"
+/*NEXT ThiNGS ARENT RELATED TO TF2 */,"seperate the curds from the whey","hard tack","ships biscuit","grog is very refreshing","salt pork","salt beef","i hate manure","roman cheese","lobscouse",
+"today we are having peas pudding","i would not eat this everyday","wok hei","rice patty eel","cheesecake","a baked onion","ten dollar potatoes","potato starch","a very fishy taste","brain cakes are underrated",
+"a hard dumpling","boiled dumpling","xiao long bao","frozen","one part rum and three parts water","bread and cheese","pickled onion","bread and butter","both lunchables and lunchly suck ass",
+"cheesy bean and rice burrito","the quesaburrito","white wine","corn chowder","clam chowder","soup and puff pastery","soup and ships biscuit","colorful paper","colourful paper","very stupid","the fitnessgram pacer test is a multistage aerobic capacity test that progressively gets more difficult as it continues  the twenty meter pacer test will begin in thirty seconds  line up at the start  the running speed starts slowly but gets faster each minute after you hear this signal  a single lap should be completed each time you hear this sound  remember to run in a straight line and run as long as possible  the second time you fail to complete a lap before the sound your test is over  the test will begin on the word start  on your mark get ready start"};
     public boolean gamefinished = false;
     public String gamestatus = "playing";
 

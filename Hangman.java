@@ -17,7 +17,9 @@ public class Hangman {
         if (gallows.gamestatus == "won") {
             System.out.println("============================================");
             if (gallows.getWrongs() == 0) {
-                System.out.println("Woah FLAWLESS!!!!!! The word/phrase was: ");
+                System.out.print("Woah FLAWLESS!!!!!! The word/phrase was: ");
+            } else if (gallows.getWrongs() == 4) {
+                System.out.print("AAAAHHH!!! So close! The word/phrase was: ");
             } else {  
                 System.out.print("You win!!!! The word/phrase was: ");
             }
